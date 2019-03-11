@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
-    user_agent = request.user_agent
-    @client = DeviceDetector.new(user_agent)
+    @user_agent = request.user_agent
+    @client = DeviceDetector.new(@user_agent)
 
     @name = @client.name # => 'Chrome'
     @name_full = @client.full_version # => '30.0.1599.69'
@@ -19,8 +19,8 @@ class PagesController < ApplicationController
   end
 
   def device
-    user_agent = request.user_agent
-    @client = DeviceDetector.new(user_agent)
+    @user_agent = request.user_agent
+    @client = DeviceDetector.new(@user_agent)
 
     @name = @client.name # => 'Chrome'
     @name_full = @client.full_version # => '30.0.1599.69'

@@ -1,4 +1,8 @@
 <p>Name: <%= @name %> <%= @name_full %></p>
 <p>OS: <%= @os_name %> <%= @os_full %></p>
-<p>Device: <%= @device_name %></p>
+<% if @device_name %>
+  <p>Device: <%= @device_name %></p>
+<% end %>
 <p>Device Type: <%= @device_type %></p>
+<br>
+<p><%= @user_agent %></p>
